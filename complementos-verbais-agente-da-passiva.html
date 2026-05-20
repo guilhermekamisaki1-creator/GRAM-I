@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula Completa — Complementos Verbais e Agente da Passiva | 2ª série EM</title>
+<style>
+  :root{
+    --paper:#f3eee2;
+    --paper-deep:#ece4d2;
+    --card:#fbf9f2;
+    --ink:#21262a;
+    --ink-soft:#4a4f4c;
+    --ink-mute:#6f726c;
+    --line:#d8cfba;
+    --teal:#0f5c4e;
+    --teal-deep:#0a4338;
+    --teal-soft:#e3efe9;
+    --terra:#c0592a;
+    --terra-soft:#f6e4d6;
+    --gold:#b6892f;
+    --gold-soft:#f3e8cf;
+    --wine:#8a2f3f;
+    --wine-soft:#f2dfe1;
+    --serif:'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;
+    --sans:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;
+    --shadow:0 1px 2px rgba(33,38,42,.05),0 8px 26px -12px rgba(33,38,42,.22);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{
+    font-family:var(--serif);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.72;
+    font-size:18px;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* ---- progress bar ---- */
+  #progress{
+    position:fixed;top:0;left:0;height:3px;width:0;
+    background:linear-gradient(90deg,var(--teal),var(--gold));
+    z-index:200;transition:width .12s ease-out;
+  }
+  /* ---- top nav ---- */
+  nav{
+    position:sticky;top:0;z-index:150;
+    background:rgba(243,238,226,.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-wrap{
+    max-width:1180px;margin:0 auto;padding:.55rem 1.4rem;
+    display:flex;align-items:center;gap:1.2rem;
+  }
+  .brand{
+    font-family:var(--sans);font-weight:800;font-size:.82rem;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);
+    white-space:nowrap;
+  }
+  .brand span{color:var(--terra)}
+  .nav-links{
+    display:flex;gap:.25rem;flex-wrap:wrap;margin-left:auto;
+  }
+  .nav-links a{
+    font-family:var(--sans);font-size:.74rem;font-weight:600;
+    text-decoration:none;color:var(--ink-soft);
+    padding:.34rem .6rem;border-radius:6px;letter-spacing:.02em;
+    transition:background .15s,color .15s;
+  }
+  .nav-links a:hover,.nav-links a.active{background:var(--teal-soft);color:var(--teal-deep)}
+  .menu-btn{display:none}
+  /* ---- hero ---- */
+  header.hero{
+    background:
+      radial-gradient(900px 380px at 88% -8%,rgba(15,92,78,.16),transparent 60%),
+      radial-gradient(700px 320px at 4% 108%,rgba(192,89,42,.13),transparent 55%),
+      var(--paper-deep);
+    border-bottom:1px solid var(--line);
+    padding:4.4rem 1.4rem 3.6rem;
+  }
+  .hero-inner{max-width:880px;margin:0 auto}
+  .eyebrow{
+    font-family:var(--sans);font-size:.74rem;font-weight:800;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--terra);
+    margin-bottom:1rem;
+  }
+  .hero h1{
+    font-size:clamp(2.2rem,5.4vw,3.6rem);
+    line-height:1.12;font-weight:700;letter-spacing:-.015em;
+    color:var(--teal-deep);margin-bottom:1rem;
+  }
+  .hero h1 em{font-style:italic;color:var(--terra)}
+  .hero .lede{font-size:1.15rem;color:var(--ink-soft);max-width:640px}
+  .hero-meta{
+    margin-top:2rem;display:flex;flex-wrap:wrap;gap:.6rem;
+  }
+  .chip{
+    font-family:var(--sans);font-size:.73rem;font-weight:700;
+    background:var(--card);border:1px solid var(--line);
+    color:var(--ink-soft);padding:.4rem .8rem;border-radius:99px;
+    letter-spacing:.03em;
+  }
+  .chip b{color:var(--teal-deep)}
+  /* ---- layout ---- */
+  main{max-width:880px;margin:0 auto;padding:0 1.4rem}
+  section{padding:3.4rem 0 1rem;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+  .sec-tag{
+    font-family:var(--sans);font-size:.72rem;font-weight:800;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--terra);
+    display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem;
+  }
+  .sec-tag::before{
+    content:"";width:26px;height:2px;background:var(--terra);display:inline-block;
+  }
+  h2{
+    font-size:clamp(1.55rem,3.6vw,2.15rem);font-weight:700;
+    color:var(--teal-deep);letter-spacing:-.01em;line-height:1.2;
+    margin-bottom:1.1rem;
+  }
+  h3{
+    font-size:1.28rem;font-weight:700;color:var(--ink);
+    margin:2rem 0 .7rem;letter-spacing:-.005em;
+  }
+  h4{
+    font-family:var(--sans);font-size:.95rem;font-weight:800;
+    color:var(--teal-deep);margin:1.4rem 0 .5rem;letter-spacing:.01em;
+  }
+  p{margin-bottom:1rem}
+  strong{color:var(--ink);font-weight:700}
+  em.t{font-style:italic;color:var(--teal-deep);font-weight:600}
+  ul,ol{margin:0 0 1.1rem 1.3rem}
+  li{margin-bottom:.5rem}
+  .ex{
+    font-style:italic;color:var(--wine);
+  }
+  .lead{font-size:1.12rem;color:var(--ink-soft)}
+  /* ---- boxes ---- */
+  .box{
+    border-radius:12px;padding:1.15rem 1.3rem;margin:1.4rem 0;
+    border:1px solid var(--line);background:var(--card);
+    box-shadow:var(--shadow);
+  }
+  .box .box-title{
+    font-family:var(--sans);font-size:.78rem;font-weight:800;
+    letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;
+    display:flex;align-items:center;gap:.5rem;
+  }
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .box-icon{
+    width:1.5rem;height:1.5rem;border-radius:6px;display:grid;place-items:center;
+    font-size:.95rem;flex:none;
+  }
+  .b-concept{border-left:5px solid var(--teal);background:var(--teal-soft)}
+  .b-concept .box-title{color:var(--teal-deep)}
+  .b-concept .box-icon{background:var(--teal);color:#fff}
+  .b-extra{border-left:5px solid var(--gold);background:var(--gold-soft)}
+  .b-extra .box-title{color:#7a5c1f}
+  .b-extra .box-icon{background:var(--gold);color:#fff}
+  .b-trap{border-left:5px solid var(--terra);background:var(--terra-soft)}
+  .b-trap .box-title{color:#9c4720}
+  .b-trap .box-icon{background:var(--terra);color:#fff}
+  .b-exam{border-left:5px solid var(--wine);background:var(--wine-soft)}
+  .b-exam .box-title{color:var(--wine)}
+  .b-exam .box-icon{background:var(--wine);color:#fff}
+  /* ---- tables ---- */
+  .tbl-wrap{overflow-x:auto;margin:1.4rem 0;border-radius:10px;border:1px solid var(--line);box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;font-size:.97rem;background:var(--card);min-width:480px}
+  th{
+    background:var(--teal-deep);color:#f3eee2;font-family:var(--sans);
+    font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    padding:.7rem .85rem;text-align:left;
+  }
+  td{padding:.7rem .85rem;border-top:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:rgba(216,207,186,.22)}
+  td b{color:var(--teal-deep)}
+  /* ---- esquema / diagrama ---- */
+  .esquema{
+    background:var(--paper-deep);border:1px dashed var(--teal);
+    border-radius:12px;padding:1.5rem 1.2rem;margin:1.5rem 0;
+    text-align:center;
+  }
+  .esquema .es-cap{
+    font-family:var(--sans);font-size:.74rem;font-weight:800;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--teal-deep);
+    margin-bottom:1rem;
+  }
+  .flow{
+    display:flex;align-items:center;justify-content:center;
+    flex-wrap:wrap;gap:.2rem;font-family:var(--sans);
+  }
+  .node{
+    background:var(--card);border:1.5px solid var(--teal);
+    border-radius:9px;padding:.5rem .8rem;font-size:.85rem;font-weight:700;
+    color:var(--teal-deep);
+  }
+  .node.alt{border-color:var(--terra);color:#9c4720}
+  .node.sm{font-size:.78rem;padding:.4rem .65rem}
+  .arrow{color:var(--terra);font-size:1.2rem;font-weight:800;padding:0 .2rem}
+  .arrow.down{display:block;width:100%;text-align:center}
+  .es-label{
+    font-family:var(--sans);font-size:.72rem;color:var(--ink-mute);
+    font-weight:600;margin-top:.35rem;
+  }
+  .terms{
+    display:flex;flex-direction:column;gap:.4rem;margin:.8rem auto;max-width:520px;
+  }
+  /* sentence map */
+  .map{
+    font-family:var(--sans);background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:1rem 1rem .8rem;margin:1.3rem 0;
+    box-shadow:var(--shadow);
+  }
+  .map .sent{font-size:1.05rem;font-weight:600;margin-bottom:.55rem;line-height:2.3}
+  .tag{
+    border-radius:5px;padding:.12rem .42rem;font-size:.95rem;font-weight:700;
+    white-space:nowrap;
+  }
+  .t-suj{background:var(--teal-soft);color:var(--teal-deep);border-bottom:2px solid var(--teal)}
+  .t-verb{background:var(--gold-soft);color:#7a5c1f;border-bottom:2px solid var(--gold)}
+  .t-od{background:var(--terra-soft);color:#9c4720;border-bottom:2px solid var(--terra)}
+  .t-oi{background:var(--wine-soft);color:var(--wine);border-bottom:2px solid var(--wine)}
+  .t-ag{background:#e5e0f0;color:#4b3f78;border-bottom:2px solid #6b5aa6}
+  .legend{
+    display:flex;flex-wrap:wrap;gap:.5rem;font-size:.72rem;font-weight:700;
+  }
+  .legend span{display:flex;align-items:center;gap:.3rem}
+  .dot{width:.7rem;height:.7rem;border-radius:3px;display:inline-block}
+  /* ---- details ---- */
+  details{
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    margin:1rem 0;overflow:hidden;box-shadow:var(--shadow);
+  }
+  summary{
+    cursor:pointer;padding:.85rem 1.1rem;font-family:var(--sans);
+    font-weight:700;font-size:.93rem;color:var(--teal-deep);
+    list-style:none;display:flex;justify-content:space-between;align-items:center;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.3rem;color:var(--terra);font-weight:700}
+  details[open] summary::after{content:"–"}
+  details[open] summary{border-bottom:1px solid var(--line)}
+  .det-body{padding:1rem 1.1rem}
+  .det-body p:last-child{margin-bottom:0}
+  .ans{
+    margin-top:.6rem;padding:.6rem .8rem;background:var(--teal-soft);
+    border-radius:7px;font-size:.96rem;
+  }
+  .ans b{color:var(--teal-deep);font-family:var(--sans);font-size:.78rem;letter-spacing:.06em}
+  /* ---- video cards ---- */
+  .video-note{
+    font-family:var(--sans);font-size:.82rem;color:var(--ink-mute);
+    background:var(--paper-deep);border-radius:8px;padding:.7rem .9rem;margin-bottom:1.4rem;
+  }
+  .vid-grid{display:grid;gap:.9rem}
+  .vid-card{
+    display:flex;align-items:center;gap:.95rem;text-decoration:none;
+    background:var(--card);border:1px solid var(--line);border-radius:11px;
+    padding:.95rem 1.05rem;box-shadow:var(--shadow);
+    transition:transform .14s,border-color .14s,box-shadow .14s;
+  }
+  .vid-card:hover{transform:translateY(-2px);border-color:var(--terra);box-shadow:0 10px 26px -10px rgba(192,89,42,.4)}
+  .play{
+    width:46px;height:46px;border-radius:11px;flex:none;
+    background:linear-gradient(135deg,var(--terra),#9c4720);
+    display:grid;place-items:center;
+  }
+  .play::after{
+    content:"";border-style:solid;border-width:9px 0 9px 15px;
+    border-color:transparent transparent transparent #fff;margin-left:3px;
+  }
+  .vid-info{min-width:0}
+  .vid-info .vt{
+    font-family:var(--sans);font-weight:700;font-size:.95rem;color:var(--ink);
+    line-height:1.35;
+  }
+  .vid-info .vc{
+    font-family:var(--sans);font-size:.78rem;color:var(--teal-deep);font-weight:600;
+    margin-top:.15rem;
+  }
+  .vid-go{
+    margin-left:auto;font-family:var(--sans);font-size:.74rem;font-weight:800;
+    color:var(--terra);white-space:nowrap;letter-spacing:.04em;
+  }
+  /* ---- revisao final ---- */
+  .recap{
+    background:var(--teal-deep);color:#eef1ec;border-radius:14px;
+    padding:1.8rem 1.6rem;margin:1.6rem 0;
+  }
+  .recap h3{color:#fff;margin-top:0}
+  .recap ol{margin-left:1.2rem}
+  .recap li{margin-bottom:.7rem;color:#dfe5e0}
+  .recap li b{color:var(--gold-soft)}
+  /* ---- footer ---- */
+  footer{
+    background:var(--paper-deep);border-top:1px solid var(--line);
+    padding:2.4rem 1.4rem;text-align:center;
+  }
+  footer p{
+    font-family:var(--sans);font-size:.8rem;color:var(--ink-mute);
+    max-width:640px;margin:.3rem auto;
+  }
+  footer .fbrand{font-weight:800;color:var(--teal-deep);letter-spacing:.06em}
+  /* ---- back to top ---- */
+  #toTop{
+    position:fixed;bottom:1.4rem;right:1.4rem;z-index:120;
+    width:46px;height:46px;border-radius:50%;border:none;cursor:pointer;
+    background:var(--teal-deep);color:#fff;font-size:1.2rem;
+    box-shadow:0 6px 18px -4px rgba(10,67,56,.6);
+    opacity:0;pointer-events:none;transition:opacity .25s,transform .2s;
+  }
+  #toTop.show{opacity:1;pointer-events:auto}
+  #toTop:hover{transform:translateY(-3px)}
+  .key{
+    font-family:var(--sans);background:var(--ink);color:var(--paper);
+    font-size:.78rem;font-weight:700;padding:.1rem .42rem;border-radius:4px;
+  }
+  /* ---- responsive ---- */
+  @media(max-width:780px){
+    body{font-size:17px}
+    .menu-btn{
+      display:block;margin-left:auto;background:var(--teal-deep);color:#fff;
+      border:none;border-radius:7px;padding:.4rem .7rem;font-family:var(--sans);
+      font-weight:700;font-size:.78rem;cursor:pointer;
+    }
+    .nav-links{
+      display:none;width:100%;flex-direction:column;gap:.1rem;
+      padding:.6rem 0 .3rem;
+    }
+    .nav-links.open{display:flex}
+    .nav-links a{padding:.55rem .7rem;font-size:.85rem}
+    .nav-wrap{flex-wrap:wrap}
+    header.hero{padding:3rem 1.2rem 2.6rem}
+    section{padding:2.6rem 0 .8rem}
+  }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav>
+  <div class="nav-wrap">
+    <div class="brand">Aula&nbsp;Premium · <span>Sintaxe</span></div>
+    <button class="menu-btn" id="menuBtn">Menu ▾</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#visao">Visão geral</a>
+      <a href="#transitividade">Transitividade</a>
+      <a href="#od">Objeto direto</a>
+      <a href="#oi">Objeto indireto</a>
+      <a href="#especiais">Casos especiais</a>
+      <a href="#confusoes">Confusões</a>
+      <a href="#vozes">Vozes verbais</a>
+      <a href="#agente">Agente da passiva</a>
+      <a href="#transposicao">Transposição</a>
+      <a href="#pegadinhas">Pegadinhas</a>
+      <a href="#prova">Cai na prova</a>
+      <a href="#videos">Vídeos</a>
+      <a href="#revisao">Revisão</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Língua Portuguesa · 2ª série EM · Recuperação</div>
+    <h1>Complementos Verbais <br>e o <em>Agente da Passiva</em></h1>
+    <p class="lede">Uma aula completa de sintaxe — do zero ao avançado. Tudo o que o verbo "pede", quem sofre e quem pratica a ação, e os truques que as bancas mais exploram.</p>
+    <div class="hero-meta">
+      <span class="chip"><b>Tema:</b> Sujeito, verbo e complemento</span>
+      <span class="chip"><b>Foco:</b> Objeto direto · indireto · agente da passiva</span>
+      <span class="chip"><b>Nível:</b> Vestibulares concorridos</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ VISÃO GERAL ============ -->
+<section id="visao">
+  <div class="sec-tag">Ponto de partida</div>
+  <h2>Visão geral do tema</h2>
+  <p class="lead">A sua recuperação tem como assunto <strong>"sujeito, verbo e complemento"</strong>. Esta aula mergulha exatamente na terceira peça desse trio — o <em class="t">complemento</em> — e em um termo que vive sendo confundido com o sujeito: o <em class="t">agente da passiva</em>.</p>
+
+  <p>Imagine uma oração como uma engrenagem. O <strong>verbo</strong> é o eixo central. Ao redor dele giram outros termos. Alguns verbos giram sozinhos; outros precisam de uma peça encaixada para que o sentido "feche". Essa peça encaixada é o <strong>complemento verbal</strong>.</p>
+
+  <div class="esquema">
+    <div class="es-cap">A oração em três blocos</div>
+    <div class="flow">
+      <div class="node">SUJEITO</div>
+      <span class="arrow">→</span>
+      <div class="node">VERBO</div>
+      <span class="arrow">→</span>
+      <div class="node alt">COMPLEMENTO</div>
+    </div>
+    <div class="es-label">"de quem se fala" — "o que se diz / a ação" — "o que o verbo precisa para ter sentido pleno"</div>
+  </div>
+
+  <p>Para dominar o assunto com segurança, vamos percorrer uma escada lógica. Cada degrau é pré-requisito do seguinte:</p>
+  <ol>
+    <li><strong>Transitividade verbal</strong> — descobrir se o verbo pede ou não complemento;</li>
+    <li><strong>Objeto direto</strong> — o complemento sem preposição obrigatória;</li>
+    <li><strong>Objeto indireto</strong> — o complemento com preposição obrigatória;</li>
+    <li><strong>Casos especiais</strong> — objeto preposicionado e pleonástico;</li>
+    <li><strong>Vozes verbais</strong> — ativa, passiva e reflexiva;</li>
+    <li><strong>Agente da passiva</strong> — quem realmente pratica a ação na voz passiva.</li>
+  </ol>
+
+  <div class="box b-concept">
+    <div class="box-title"><span class="box-icon">✦</span>Por que isso importa</div>
+    <p>Sem identificar os complementos, você não consegue fazer <strong>análise sintática</strong>, não acerta questões de <strong>regência</strong>, não transforma uma frase da voz ativa para a passiva e tropeça em <strong>concordância verbal</strong> (como na sua prova de recuperação). É um conteúdo-base que sustenta vários outros.</p>
+  </div>
+</section>
+
+<!-- ============ TRANSITIVIDADE ============ -->
+<section id="transitividade">
+  <div class="sec-tag">Degrau 1 — pré-requisito</div>
+  <h2>Transitividade verbal</h2>
+  <p class="lead">Antes de dizer <em>qual</em> é o complemento, preciso saber se o verbo <em>pede</em> complemento. Essa "necessidade" do verbo chama-se transitividade.</p>
+
+  <div class="box b-concept">
+    <div class="box-title"><span class="box-icon">✦</span>Conceito-chave</div>
+    <p><strong>Transitividade</strong> é a propriedade que indica se o sentido do verbo se completa nele mesmo ou se ele "transita" (passa, caminha) em direção a outro termo para se completar. Atenção: a transitividade <strong>não é fixa no verbo</strong> — ela depende de como o verbo é usado na frase.</p>
+  </div>
+
+  <h3>Os cinco comportamentos do verbo</h3>
+
+  <h4>1. Verbo intransitivo (VI)</h4>
+  <p>Tem sentido completo. Não precisa de complemento. Pode vir acompanhado de adjuntos (lugar, tempo), mas não de objetos.</p>
+  <p class="ex">O bebê dormiu. &nbsp;/&nbsp; O avião caiu. &nbsp;/&nbsp; Ninguém chegou.</p>
+
+  <h4>2. Verbo transitivo direto (VTD)</h4>
+  <p>Tem sentido incompleto e pede um complemento <strong>sem preposição obrigatória</strong>. Esse complemento é o <em class="t">objeto direto</em>.</p>
+  <p class="ex">Comprei <u>o livro</u>. &nbsp;/&nbsp; A criança quebrou <u>o vaso</u>.</p>
+
+  <h4>3. Verbo transitivo indireto (VTI)</h4>
+  <p>Pede um complemento <strong>com preposição obrigatória</strong>. Esse complemento é o <em class="t">objeto indireto</em>.</p>
+  <p class="ex">Gosto <u>de música</u>. &nbsp;/&nbsp; Confio <u>em você</u>.</p>
+
+  <h4>4. Verbo transitivo direto e indireto (VTDI ou bitransitivo)</h4>
+  <p>Pede <strong>dois complementos</strong> ao mesmo tempo: um objeto direto e um objeto indireto.</p>
+  <p class="ex">Dei <u>um presente</u> <u>ao meu amigo</u>. &nbsp;/&nbsp; Contei <u>a verdade</u> <u>à professora</u>.</p>
+
+  <h4>5. Verbo de ligação (VL)</h4>
+  <p>Não exprime ação: apenas <strong>liga</strong> o sujeito a uma característica (o predicativo do sujeito). Não tem objeto.</p>
+  <p class="ex">Ela é inteligente. &nbsp;/&nbsp; O dia ficou frio.</p>
+
+  <div class="esquema">
+    <div class="es-cap">Roteiro de decisão — "o verbo pede complemento?"</div>
+    <div class="flow"><div class="node sm">VERBO</div></div>
+    <span class="arrow down">↓</span>
+    <div class="flow">
+      <div class="node alt sm">tem sentido completo?</div>
+    </div>
+    <span class="arrow down">↓ se SIM → Intransitivo &nbsp; | &nbsp; ↓ se NÃO ↓</span>
+    <div class="flow">
+      <div class="node sm">o complemento exige preposição?</div>
+    </div>
+    <span class="arrow down">↓</span>
+    <div class="flow">
+      <div class="node sm">NÃO → VTD (objeto direto)</div>
+      <span class="arrow">·</span>
+      <div class="node sm">SIM → VTI (objeto indireto)</div>
+      <span class="arrow">·</span>
+      <div class="node alt sm">OS DOIS → VTDI</div>
+    </div>
+  </div>
+
+  <div class="box b-trap">
+    <div class="box-title"><span class="box-icon">!</span>Erro frequente — "decorar" a transitividade</div>
+    <p>O mesmo verbo muda de comportamento conforme a frase. Veja o verbo <strong>comer</strong>:</p>
+    <ul>
+      <li><span class="ex">A criança já comeu.</span> → intransitivo (sentido completo).</li>
+      <li><span class="ex">A criança comeu <u>a maçã</u>.</span> → VTD ("a maçã" = objeto direto).</li>
+    </ul>
+    <p>Conclusão: nunca diga "o verbo X é transitivo direto" de forma absoluta. Diga "<strong>neste contexto</strong>, o verbo é VTD".</p>
+  </div>
+</section>
+
+<!-- ============ OBJETO DIRETO ============ -->
+<section id="od">
+  <div class="sec-tag">Degrau 2 — complemento verbal</div>
+  <h2>Objeto direto (OD)</h2>
+  <p class="lead">É o complemento de um verbo transitivo direto. Liga-se ao verbo <strong>diretamente</strong>, isto é, sem preposição obrigatória.</p>
+
+  <div class="box b-concept">
+    <div class="box-title"><span class="box-icon">✦</span>Definição precisa</div>
+    <p>O <strong>objeto direto</strong> é o termo que completa o sentido de um VTD e, normalmente, indica o <strong>ser para o qual a ação verbal se dirige</strong> (o "alvo" ou "paciente" da ação). Costuma vir <strong>sem preposição</strong>.</p>
+  </div>
+
+  <h4>Como localizar o objeto direto</h4>
+  <p>Faça ao verbo a pergunta <strong>"o quê?"</strong> ou <strong>"quem?"</strong>:</p>
+  <div class="map">
+    <div class="sent">O caçador matou <span class="tag t-od">o leão</span>.</div>
+    <p style="margin:0;font-family:var(--sans);font-size:.86rem;color:var(--ink-mute)">Matou <strong>o quê?</strong> → "o leão". Sem preposição → <strong>objeto direto</strong>.</p>
+  </div>
+
+  <h4>O objeto direto pode ser um pronome</h4>
+  <p>Quando substituímos o objeto direto por um pronome, usamos os <strong>pronomes oblíquos átonos</strong> <span class="key">o, a, os, as</span> (e também <em>me, te, se, nos, vos</em>, conforme a pessoa).</p>
+  <div class="map">
+    <div class="sent">Comprei o livro. &nbsp;→&nbsp; Comprei-<span class="tag t-od">o</span>.</div>
+    <div class="sent">Encontrei a Júlia. &nbsp;→&nbsp; Encontrei-<span class="tag t-od">a</span>.</div>
+  </div>
+  <div class="box b-extra">
+    <div class="box-title"><span class="box-icon">+</span>Complemento para melhor compreensão</div>
+    <p>Esse é um atalho de ouro para as provas: se a frase admite a troca por <strong>o / a / os / as</strong>, o complemento é objeto direto. Se admite a troca por <strong>lhe / lhes</strong>, é objeto indireto. Guarde esse par — ele resolve muitas questões.</p>
+  </div>
+</section>
+
+<!-- ============ OBJETO INDIRETO ============ -->
+<section id="oi">
+  <div class="sec-tag">Degrau 3 — complemento verbal</div>
+  <h2>Objeto indireto (OI)</h2>
+  <p class="lead">É o complemento de um verbo transitivo indireto. Liga-se ao verbo de modo <strong>indireto</strong>, ou seja, intermediado por uma preposição obrigatória.</p>
+
+  <div class="box b-concept">
+    <div class="box-title"><span class="box-icon">✦</span>Definição precisa</div>
+    <p>O <strong>objeto indireto</strong> completa o sentido de um VTI e vem sempre regido de <strong>preposição obrigatória</strong> — exigida pela regência do verbo. As preposições mais comuns são <em>a, de, com, em, para, por</em>.</p>
+  </div>
+
+  <h4>Como localizar o objeto indireto</h4>
+  <p>Faça ao verbo perguntas <strong>com preposição</strong>: "a quem?", "de quê?", "em quem?", "com quem?".</p>
+  <div class="map">
+    <div class="sent">O filho obedece <span class="tag t-oi">aos pais</span>.</div>
+    <p style="margin:0;font-family:var(--sans);font-size:.86rem;color:var(--ink-mute)">Obedece <strong>a quem?</strong> → "aos pais". Com preposição obrigatória ("a") → <strong>objeto indireto</strong>.</p>
+  </div>
+
+  <h4>O objeto indireto também pode ser pronome</h4>
+  <p>Usamos os oblíquos <span class="key">lhe, lhes</span> (e <em>me, te, se, nos, vos</em>).</p>
+  <div class="map">
+    <div class="sent">Obedeço aos pais. &nbsp;→&nbsp; Obedeço-<span class="tag t-oi">lhes</span>.</div>
+  </div>
+
+  <h3>Os dois complementos juntos: o verbo bitransitivo</h3>
+  <p>Verbos como <strong>dar, dizer, contar, enviar, oferecer, entregar, pedir</strong> pedem objeto direto <em>e</em> indireto:</p>
+  <div class="map">
+    <div class="sent">
+      <span class="tag t-suj">O professor</span>
+      <span class="tag t-verb">entregou</span>
+      <span class="tag t-od">as provas</span>
+      <span class="tag t-oi">aos alunos</span>.
+    </div>
+    <div class="legend">
+      <span><span class="dot t-suj"></span>sujeito</span>
+      <span><span class="dot t-verb"></span>verbo (VTDI)</span>
+      <span><span class="dot t-od"></span>objeto direto — "entregou o quê?"</span>
+      <span><span class="dot t-oi"></span>objeto indireto — "entregou a quem?"</span>
+    </div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Critério</th><th>Objeto direto</th><th>Objeto indireto</th></tr></thead>
+      <tbody>
+        <tr><td><b>Tipo de verbo</b></td><td>Transitivo direto (VTD)</td><td>Transitivo indireto (VTI)</td></tr>
+        <tr><td><b>Preposição</b></td><td>Sem preposição obrigatória</td><td>Com preposição obrigatória</td></tr>
+        <tr><td><b>Pergunta-teste</b></td><td>o quê? / quem?</td><td>a quem? de quê? em quê?</td></tr>
+        <tr><td><b>Pronome substituto</b></td><td>o, a, os, as</td><td>lhe, lhes</td></tr>
+        <tr><td><b>Vira sujeito na voz passiva?</b></td><td>Sim</td><td>Não</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ CASOS ESPECIAIS ============ -->
+<section id="especiais">
+  <div class="sec-tag">Degrau 4 — aprofundamento</div>
+  <h2>Casos especiais dos objetos</h2>
+  <p class="lead">Aqui mora boa parte das pegadinhas de vestibular. São situações em que o objeto não aparece "no formato padrão".</p>
+
+  <h3>Objeto direto preposicionado</h3>
+  <p>É um <strong>objeto direto</strong> que aparece, excepcionalmente, acompanhado de preposição — só que essa preposição <strong>não é obrigatória</strong> (não é exigida pela regência). Continua sendo objeto direto, porque completa um VTD.</p>
+
+  <h4>Quando isso acontece</h4>
+  <ul>
+    <li><strong>Ênfase, clareza ou tradição</strong>: <span class="ex">Amar a Deus sobre todas as coisas.</span></li>
+    <li><strong>Com pronomes pessoais tônicos</strong>: <span class="ex">A mim ninguém engana.</span> &nbsp;("a mim" = objeto direto preposicionado)</li>
+    <li><strong>Para evitar ambiguidade</strong>: <span class="ex">Ao filho o pai venceu.</span> (a preposição deixa claro quem venceu quem)</li>
+    <li><strong>Em expressões cristalizadas</strong>: <span class="ex">Puxou da espada.</span></li>
+  </ul>
+
+  <div class="box b-extra">
+    <div class="box-title"><span class="box-icon">+</span>Complemento para melhor compreensão — o teste decisivo</div>
+    <p>Como diferenciar objeto direto preposicionado de objeto indireto, já que os dois têm preposição? <strong>Tire a preposição</strong> e veja se a frase continua correta:</p>
+    <ul>
+      <li><span class="ex">Amo a Deus → Amo Deus.</span> ✓ A frase fecha sem a preposição → ela era opcional → <strong>objeto direto preposicionado</strong>.</li>
+      <li><span class="ex">Gosto de música → Gosto música.</span> ✗ A frase quebra → a preposição era obrigatória → <strong>objeto indireto</strong>.</li>
+    </ul>
+  </div>
+
+  <h3>Objeto pleonástico</h3>
+  <p>É a <strong>repetição</strong> do objeto, por motivo de <strong>ênfase/expressividade</strong>. Geralmente o termo aparece deslocado para o início da frase e é retomado por um pronome oblíquo.</p>
+  <div class="map">
+    <div class="sent">
+      Aquele livro, eu já <span class="tag t-od">o</span> li.
+    </div>
+    <p style="margin:0;font-family:var(--sans);font-size:.86rem;color:var(--ink-mute)">"Aquele livro" e o pronome "o" referem-se ao mesmo termo → <strong>objeto direto pleonástico</strong>.</p>
+  </div>
+  <div class="map">
+    <div class="sent">
+      A mim, ninguém <span class="tag t-oi">me</span> engana.
+    </div>
+    <p style="margin:0;font-family:var(--sans);font-size:.86rem;color:var(--ink-mute)">"A mim" retomado por "me" → <strong>objeto indireto pleonástico</strong>.</p>
+  </div>
+</section>
+
+<!-- ============ CONFUSOES ============ -->
+<section id="confusoes">
+  <div class="sec-tag">Alerta máximo</div>
+  <h2>As grandes confusões da banca</h2>
+  <p class="lead">Os examinadores adoram explorar termos que <em>parecem</em> a mesma coisa, mas não são. Domine estas três distinções e você ganha pontos preciosos.</p>
+
+  <h3>Confusão 1 — Objeto indireto × Complemento nominal</h3>
+  <p>Ambos têm preposição. A diferença está no <strong>termo que eles completam</strong>:</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th></th><th>Objeto indireto</th><th>Complemento nominal</th></tr></thead>
+      <tbody>
+        <tr><td><b>Completa</b></td><td>um <b>verbo</b> (VTI)</td><td>um <b>nome</b> — substantivo abstrato, adjetivo ou advérbio</td></tr>
+        <tr><td><b>Exemplo</b></td><td class="ex">Necessito de ajuda.</td><td class="ex">Tenho necessidade de ajuda.</td></tr>
+        <tr><td><b>Quem rege</b></td><td>"necessito" (verbo)</td><td>"necessidade" (substantivo)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="box b-extra">
+    <div class="box-title"><span class="box-icon">+</span>Atalho prático</div>
+    <p>Pergunte: a expressão preposicionada está completando um <strong>verbo</strong> ou uma <strong>palavra de natureza substantiva/adjetiva</strong>? Verbo → objeto indireto. Nome → complemento nominal.</p>
+  </div>
+
+  <h3>Confusão 2 — Verbos de regência traiçoeira</h3>
+  <p>Vários verbos comuns mudam de sentido conforme a transitividade. As bancas vivem cobrando isto:</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Verbo</th><th>Uso e transitividade</th><th>Exemplo</th></tr></thead>
+      <tbody>
+        <tr><td><b>Assistir</b></td><td>VTI (= ver) — exige "a"</td><td class="ex">Assisti ao filme.</td></tr>
+        <tr><td><b>Obedecer</b></td><td>VTI — exige "a"</td><td class="ex">Obedeço aos sinais.</td></tr>
+        <tr><td><b>Aspirar</b></td><td>VTI (= almejar) — exige "a"</td><td class="ex">Aspiro a um cargo melhor.</td></tr>
+        <tr><td><b>Visar</b></td><td>VTI (= ter por objetivo) — exige "a"</td><td class="ex">A medida visa ao bem comum.</td></tr>
+        <tr><td><b>Querer</b></td><td>VTD (= desejar) / VTI (= estimar)</td><td class="ex">Quero um café. / Quero a meus pais.</td></tr>
+        <tr><td><b>Esquecer / Lembrar</b></td><td>VTD sem pronome / VTI com pronome</td><td class="ex">Esqueci o nome. / Esqueci-me do nome.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Confusão 3 — Objeto × Sujeito na ordem inversa</h3>
+  <p>Em português, o sujeito nem sempre vem antes do verbo. Quando a ordem é invertida, é fácil confundir sujeito com objeto. Veja um caso tirado da sua própria recuperação (Questão 9):</p>
+  <div class="box b-exam">
+    <div class="box-title"><span class="box-icon">★</span>Direto da sua prova — Questão 9</div>
+    <p><span class="ex">"Em boca fechada não entra mosquito."</span></p>
+    <p>O verbo "entrar" é intransitivo — não tem objeto. Então "mosquito" não é objeto: é o <strong>sujeito</strong>, posposto ao verbo. Na ordem direta: <span class="ex">"Mosquito não entra em boca fechada."</span></p>
+    <p style="margin-bottom:0"><strong>Teste infalível:</strong> troque o termo de número (singular↔plural). Se o verbo acompanhar, o termo é o sujeito. "Entram <u>mosquitos</u>" — o verbo mudou junto → "mosquitos" é sujeito, não objeto.</p>
+  </div>
+</section>
+
+<!-- ============ VOZES ============ -->
+<section id="vozes">
+  <div class="sec-tag">Degrau 5 — pré-requisito</div>
+  <h2>Vozes verbais</h2>
+  <p class="lead">Para entender o agente da passiva, primeiro é preciso saber o que é a voz passiva. A <strong>voz verbal</strong> indica a relação entre o sujeito e a ação do verbo.</p>
+
+  <h3>Voz ativa</h3>
+  <p>O sujeito <strong>pratica</strong> a ação. Ele é o <em class="t">sujeito agente</em>.</p>
+  <div class="map">
+    <div class="sent"><span class="tag t-suj">A polícia</span> <span class="tag t-verb">prendeu</span> <span class="tag t-od">o ladrão</span>.</div>
+    <p style="margin:0;font-family:var(--sans);font-size:.86rem;color:var(--ink-mute)">Quem agiu? "A polícia" → sujeito agente.</p>
+  </div>
+
+  <h3>Voz passiva</h3>
+  <p>O sujeito <strong>sofre / recebe</strong> a ação. Ele é o <em class="t">sujeito paciente</em>. A voz passiva tem duas formas:</p>
+
+  <h4>a) Voz passiva analítica</h4>
+  <p>Construída com o verbo auxiliar <strong>ser</strong> + <strong>particípio</strong> do verbo principal.</p>
+  <div class="map">
+    <div class="sent"><span class="tag t-suj">O ladrão</span> <span class="tag t-verb">foi preso</span> <span class="tag t-ag">pela polícia</span>.</div>
+    <p style="margin:0;font-family:var(--sans);font-size:.86rem;color:var(--ink-mute)">"foi preso" = ser + particípio. O sujeito sofre a ação.</p>
+  </div>
+
+  <h4>b) Voz passiva sintética (ou pronominal)</h4>
+  <p>Construída com o verbo + a partícula <strong>"se"</strong>, chamada <em class="t">pronome apassivador</em> (ou partícula apassivadora). Usa-se com verbos transitivos diretos.</p>
+  <div class="map">
+    <div class="sent">Alugam-se <span class="tag t-suj">casas</span>. &nbsp;&nbsp;<span style="font-size:.8rem;color:var(--ink-mute)">(= Casas são alugadas)</span></div>
+    <div class="sent">Vendeu-se <span class="tag t-suj">o terreno</span>. &nbsp;&nbsp;<span style="font-size:.8rem;color:var(--ink-mute)">(= O terreno foi vendido)</span></div>
+  </div>
+
+  <h3>Voz reflexiva</h3>
+  <p>O sujeito pratica <strong>e</strong> sofre a ação ao mesmo tempo (a ação volta sobre ele).</p>
+  <p class="ex">O menino feriu-se. &nbsp;/&nbsp; Ela penteou-se.</p>
+
+  <div class="box b-trap">
+    <div class="box-title"><span class="box-icon">!</span>Pegadinha clássica — "se" apassivador × "se" de indeterminação</div>
+    <p>Esse "se" tem dois papéis muito parecidos, e a banca adora explorar (inclusive ligando isso a <strong>concordância verbal</strong>):</p>
+    <ul>
+      <li><strong>Pronome apassivador</strong> — verbo é <b>VTD</b>. O verbo concorda com o sujeito paciente. <br><span class="ex">Vendem-se casas.</span> (casas = sujeito plural → verbo no plural)</li>
+      <li><strong>Índice de indeterminação do sujeito</strong> — verbo é <b>VTI, VI ou VL</b>. O verbo fica <b>sempre no singular</b>. <br><span class="ex">Precisa-se de funcionários.</span> (verbo no singular; sujeito indeterminado)</li>
+    </ul>
+    <p style="margin-bottom:0"><strong>Regra de ouro:</strong> VTD + se → passiva sintética (concorda no plural). VTI/VI/VL + se → sujeito indeterminado (fica no singular).</p>
+  </div>
+</section>
+
+<!-- ============ AGENTE DA PASSIVA ============ -->
+<section id="agente">
+  <div class="sec-tag">Degrau 6 — o destino da aula</div>
+  <h2>O Agente da Passiva</h2>
+  <p class="lead">Chegamos ao termo principal. Na voz passiva, o sujeito sofre a ação — mas alguém ainda a pratica. Esse "alguém" é o agente da passiva.</p>
+
+  <div class="box b-concept">
+    <div class="box-title"><span class="box-icon">✦</span>Definição precisa</div>
+    <p>O <strong>agente da passiva</strong> é o termo da oração na <strong>voz passiva</strong> que indica <strong>quem pratica a ação</strong> sofrida pelo sujeito paciente. É exatamente o ser que, na voz ativa, seria o sujeito agente. Vem sempre <strong>introduzido por preposição</strong>.</p>
+  </div>
+
+  <h4>As preposições do agente da passiva</h4>
+  <ul>
+    <li><strong>por</strong> (e suas combinações <em>pelo, pela, pelos, pelas</em>) — é a forma mais comum. <br><span class="ex">A casa foi construída <u>pelos operários</u>.</span></li>
+    <li><strong>de</strong> — usada principalmente com verbos que indicam <strong>sentimento, estado ou percepção</strong> (amar, conhecer, respeitar, acompanhar, cercar). <br><span class="ex">Ela era amada <u>de todos</u>. &nbsp;/&nbsp; O herói era conhecido <u>de toda a cidade</u>.</span></li>
+  </ul>
+
+  <div class="map">
+    <div class="sent">
+      <span class="tag t-suj">A maçã</span>
+      <span class="tag t-verb">foi comida</span>
+      <span class="tag t-ag">pelo jogador</span>.
+    </div>
+    <div class="legend">
+      <span><span class="dot t-suj"></span>sujeito paciente — sofre a ação</span>
+      <span><span class="dot t-verb"></span>locução verbal passiva (ser + particípio)</span>
+      <span><span class="dot t-ag"></span>agente da passiva — pratica a ação</span>
+    </div>
+  </div>
+
+  <h4>O agente pode estar oculto</h4>
+  <p>Nem sempre o agente aparece. Quando ele não é mencionado (porque é desconhecido ou irrelevante), a oração continua na voz passiva — apenas sem agente expresso.</p>
+  <p class="ex">O ladrão foi preso. &nbsp;<span style="font-style:normal;color:var(--ink-mute);font-size:.9rem">(voz passiva; agente da passiva não expresso)</span></p>
+  <p class="ex">Vendem-se apartamentos. &nbsp;<span style="font-style:normal;color:var(--ink-mute);font-size:.9rem">(na voz passiva sintética, o agente normalmente não aparece)</span></p>
+
+  <div class="box b-trap">
+    <div class="box-title"><span class="box-icon">!</span>A confusão número 1 — Sujeito × Agente da passiva</div>
+    <p>Os dois indicam "quem faz a ação" — mas em vozes diferentes:</p>
+    <div class="tbl-wrap" style="margin:.7rem 0 0">
+      <table>
+        <thead><tr><th></th><th>Sujeito agente (voz ativa)</th><th>Agente da passiva (voz passiva)</th></tr></thead>
+        <tbody>
+          <tr><td><b>Tem preposição?</b></td><td>Não</td><td>Sim (por / de)</td></tr>
+          <tr><td><b>O verbo concorda com ele?</b></td><td>Sim</td><td>Não — concorda com o sujeito paciente</td></tr>
+          <tr><td><b>Frase exemplo</b></td><td class="ex">Os alunos fizeram a prova.</td><td class="ex">A prova foi feita pelos alunos.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRANSPOSICAO ============ -->
+<section id="transposicao">
+  <div class="sec-tag">A habilidade mais cobrada</div>
+  <h2>Transposição: voz ativa ↔ voz passiva</h2>
+  <p class="lead">Transformar uma frase de uma voz para a outra é a questão mais recorrente sobre o tema. Vamos transformar isso em um procedimento mecânico e seguro.</p>
+
+  <h3>O mecanismo dos três giros</h3>
+  <p>Da voz <strong>ativa</strong> para a <strong>passiva</strong>, três peças giram de lugar:</p>
+
+  <div class="esquema">
+    <div class="es-cap">Da voz ativa para a voz passiva</div>
+    <div class="flow">
+      <div class="node">Sujeito (agente)</div>
+      <span class="arrow">→</span>
+      <div class="node alt">Agente da passiva</div>
+    </div>
+    <span class="arrow down">↓</span>
+    <div class="flow">
+      <div class="node">Objeto direto</div>
+      <span class="arrow">→</span>
+      <div class="node alt">Sujeito paciente</div>
+    </div>
+    <span class="arrow down">↓</span>
+    <div class="flow">
+      <div class="node">Verbo (VTD)</div>
+      <span class="arrow">→</span>
+      <div class="node alt">ser + particípio (no mesmo tempo)</div>
+    </div>
+  </div>
+
+  <h4>Passo a passo, com exemplo</h4>
+  <p><strong>Frase na voz ativa:</strong></p>
+  <div class="map">
+    <div class="sent"><span class="tag t-suj">O caçador</span> <span class="tag t-verb">matou</span> <span class="tag t-od">o leão</span>.</div>
+  </div>
+  <ol>
+    <li>O <strong>objeto direto</strong> ("o leão") vira <strong>sujeito paciente</strong>.</li>
+    <li>O <strong>sujeito</strong> ("o caçador") vira <strong>agente da passiva</strong> → ganha a preposição: "pelo caçador".</li>
+    <li>O <strong>verbo</strong> ("matou", pretérito perfeito) vira <strong>ser + particípio no mesmo tempo</strong> → "foi morto".</li>
+  </ol>
+  <p><strong>Frase na voz passiva:</strong></p>
+  <div class="map">
+    <div class="sent"><span class="tag t-suj">O leão</span> <span class="tag t-verb">foi morto</span> <span class="tag t-ag">pelo caçador</span>.</div>
+  </div>
+
+  <div class="box b-extra">
+    <div class="box-title"><span class="box-icon">+</span>Complemento para melhor compreensão — o tempo do verbo "ser"</div>
+    <p>O segredo da conversão é: o verbo <strong>ser</strong> assume <strong>o tempo do verbo original</strong>; o verbo principal vira <strong>particípio</strong>.</p>
+    <ul>
+      <li>ama → <strong>é</strong> amado &nbsp;(presente)</li>
+      <li>amou → <strong>foi</strong> amado &nbsp;(pretérito perfeito)</li>
+      <li>amava → <strong>era</strong> amado &nbsp;(pretérito imperfeito)</li>
+      <li>amará → <strong>será</strong> amado &nbsp;(futuro)</li>
+    </ul>
+  </div>
+
+  <div class="box b-trap">
+    <div class="box-title"><span class="box-icon">!</span>Pegadinha — só VTD vira voz passiva</div>
+    <p>Para a transposição funcionar, o verbo precisa ter <strong>objeto direto</strong> (ser VTD ou VTDI). Verbos <strong>intransitivos</strong> e <strong>transitivos indiretos</strong> não passam para a voz passiva analítica de forma natural. <span class="ex">"Gosto de música"</span> não tem voz passiva — não há objeto direto para virar sujeito.</p>
+  </div>
+
+  <div class="box b-exam">
+    <div class="box-title"><span class="box-icon">★</span>Direto da sua prova — Questão 2 (Fuvest)</div>
+    <p><span class="ex">"Sorria, você está sendo filmado."</span></p>
+    <p>A expressão "está sendo filmado" é <strong>voz passiva analítica</strong> (locução com o verbo <em>ser</em> + particípio <em>filmado</em>). Ao transpor para a <strong>1ª pessoa do plural</strong> ("nós") na forma negativa, dois ajustes acontecem:</p>
+    <ul>
+      <li>o verbo "sorrir" vai para o imperativo negativo de "nós": <strong>"Não sorriamos"</strong>;</li>
+      <li>o particípio "filmado" funciona como adjetivo e <strong>concorda</strong> com o novo sujeito plural "nós" → <strong>"filmados"</strong>.</li>
+    </ul>
+    <p style="margin-bottom:0">Resultado: <span class="ex">"Não sorriamos, nós estamos sendo filmados."</span> — <strong>alternativa E</strong>. Repare como entender a voz passiva resolve a questão.</p>
+  </div>
+</section>
+
+<!-- ============ PEGADINHAS ============ -->
+<section id="pegadinhas">
+  <div class="sec-tag">Resumo de armadilhas</div>
+  <h2>Pegadinhas e erros frequentes</h2>
+  <p class="lead">Um painel rápido das confusões que mais derrubam candidatos. Releia antes da prova.</p>
+
+  <details>
+    <summary>1. "Por" / "pelo" nem sempre indica agente da passiva</summary>
+    <div class="det-body">
+      <p>A preposição "por" só introduz agente da passiva se a oração estiver na <strong>voz passiva</strong> (ser + particípio, ou verbo + se). Em outros contextos, "por/pelo" forma um <strong>adjunto adverbial</strong>.</p>
+      <p class="ex">O ladrão foi capturado <u>pela polícia</u>. → agente da passiva (voz passiva).</p>
+      <p class="ex">Caminhei <u>pela praça</u>. → adjunto adverbial de lugar (voz ativa, sem ser + particípio).</p>
+      <div class="ans"><b>COMO NÃO ERRAR &nbsp;·</b> primeiro confirme se a frase está na voz passiva. Só então o "por" pode ser agente.</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>2. Trocar agente da passiva por objeto indireto</summary>
+    <div class="det-body">
+      <p>Os dois têm preposição, mas pertencem a vozes diferentes. O <strong>objeto indireto</strong> aparece na voz ativa (completando um VTI). O <strong>agente da passiva</strong> aparece na voz passiva.</p>
+      <p class="ex">Obedeço <u>aos pais</u>. → objeto indireto (voz ativa).</p>
+      <p class="ex">A ordem foi dada <u>pelo chefe</u>. → agente da passiva (voz passiva).</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>3. Confundir objeto direto preposicionado com objeto indireto</summary>
+    <div class="det-body">
+      <p>Aplique o teste da retirada da preposição. Se a frase continua correta sem ela, era objeto direto preposicionado; se quebra, era objeto indireto.</p>
+      <p class="ex">Amo a Deus → Amo Deus ✓ → objeto direto preposicionado.</p>
+      <p class="ex">Gosto de você → Gosto você ✗ → objeto indireto.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>4. Achar que o verbo tem transitividade fixa</summary>
+    <div class="det-body">
+      <p>A transitividade depende do <strong>contexto</strong>. O mesmo verbo pode ser VI em uma frase e VTD em outra. Sempre analise o verbo <em>dentro</em> da oração.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>5. "Se" apassivador × "se" de indeterminação do sujeito</summary>
+    <div class="det-body">
+      <p>VTD + se → voz passiva sintética → verbo concorda no plural (<span class="ex">Vendem-se casas</span>). VTI/VI/VL + se → sujeito indeterminado → verbo no singular (<span class="ex">Precisa-se de funcionários</span>). Erro nisso é erro de concordância verbal — exatamente o que sua recuperação cobra.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>6. Misturar pessoas do discurso (você × tu)</summary>
+    <div class="det-body">
+      <p>Como na Questão 13 da sua prova — <span class="ex">"Não esquenta, põe na Consul"</span> — "esquenta" pede o sujeito "você" e "põe" pede "tu". A norma culta exige coerência: <span class="ex">"Não esquente, ponha na Consul."</span> Esse cuidado vale também ao montar frases na voz passiva: mantenha sujeito e verbo na mesma pessoa.</p>
+    </div>
+  </details>
+</section>
+
+<!-- ============ CAI NA PROVA ============ -->
+<section id="prova">
+  <div class="sec-tag">Prioridade de estudo</div>
+  <h2>O que mais cai em prova</h2>
+  <p class="lead">Se o tempo for curto, concentre energia exatamente nestes pontos — são os campeões de aparição em vestibulares concorridos.</p>
+
+  <div class="box b-exam">
+    <div class="box-title"><span class="box-icon">★</span>Os 5 itens mais cobrados</div>
+    <ol style="margin-bottom:0">
+      <li><strong>Transposição voz ativa ↔ voz passiva</strong>, mantendo o tempo verbal correto.</li>
+      <li><strong>Identificar o agente da passiva</strong> e diferenciá-lo do sujeito.</li>
+      <li><strong>Distinguir objeto direto, objeto indireto e complemento nominal</strong> em uma análise sintática.</li>
+      <li><strong>"Se" apassivador × índice de indeterminação</strong> e o reflexo disso na <strong>concordância verbal</strong>.</li>
+      <li><strong>Regência de verbos traiçoeiros</strong> (assistir, aspirar, visar, obedecer, querer).</li>
+    </ol>
+  </div>
+
+  <h3>Treine agora — exercícios resolvidos</h3>
+
+  <details>
+    <summary>Questão A — Classifique os termos sublinhados</summary>
+    <div class="det-body">
+      <p><span class="ex">"O juiz entregou <u>o troféu</u> <u>ao campeão</u>."</span></p>
+      <p>Pense antes de abrir a resposta abaixo.</p>
+      <div class="ans"><b>RESPOSTA &nbsp;·</b> "o troféu" = objeto direto (entregou o quê?, sem preposição). "ao campeão" = objeto indireto (entregou a quem?, com preposição obrigatória). O verbo "entregar" é VTDI.</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Questão B — Passe para a voz passiva</summary>
+    <div class="det-body">
+      <p><span class="ex">"A enchente destruiu as plantações."</span></p>
+      <div class="ans"><b>RESPOSTA &nbsp;·</b> <span class="ex">"As plantações foram destruídas pela enchente."</span> — "as plantações" (objeto direto) vira sujeito paciente; "a enchente" vira agente da passiva; "destruiu" → "foram destruídas" (ser no mesmo tempo + particípio, concordando com o sujeito plural).</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Questão C — Identifique o agente da passiva</summary>
+    <div class="det-body">
+      <p><span class="ex">"O quadro foi pintado por um artista desconhecido."</span></p>
+      <div class="ans"><b>RESPOSTA &nbsp;·</b> Agente da passiva = "por um artista desconhecido". Sujeito paciente = "o quadro". Locução verbal passiva = "foi pintado".</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Questão D — Pegadinha do "por"</summary>
+    <div class="det-body">
+      <p>Em qual frase "pela rua" é agente da passiva? <br>(I) <span class="ex">A notícia foi espalhada pela rua inteira.</span> &nbsp; (II) <span class="ex">O cão correu pela rua.</span></p>
+      <div class="ans"><b>RESPOSTA &nbsp;·</b> Em nenhuma das duas "pela rua" é agente da passiva. Na frase I, a oração está na voz passiva ("foi espalhada"), mas "pela rua inteira" indica lugar → adjunto adverbial. Na II, é voz ativa → "pela rua" é adjunto adverbial de lugar. Lição: voz passiva é condição necessária, mas o termo ainda precisa indicar <em>quem pratica a ação</em>.</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Questão E — Voz passiva sintética e concordância</summary>
+    <div class="det-body">
+      <p>Corrija, se necessário: <span class="ex">"Aluga-se quartos para estudantes."</span></p>
+      <div class="ans"><b>RESPOSTA &nbsp;·</b> Há erro de concordância. "Alugar" é VTD; com "se" forma voz passiva sintética → "quartos" é o sujeito paciente (plural). O correto é <span class="ex">"Alugam-se quartos para estudantes."</span></div>
+    </div>
+  </details>
+</section>
+
+<!-- ============ VIDEOS ============ -->
+<section id="videos">
+  <div class="sec-tag">Aprofunde com videoaulas</div>
+  <h2>Vídeos completos no YouTube</h2>
+  <p class="lead">Aulas detalhadas de professores muito conhecidos entre vestibulandos. Cada botão abre diretamente o vídeo recomendado.</p>
+
+  <div class="video-note">
+    Os links foram selecionados de canais consagrados na preparação para vestibulares. Caso algum vídeo apareça indisponível, isso decorre de alterações feitas pelo próprio canal no YouTube — nesse caso, procure o vídeo de mesmo título no canal indicado.
+  </div>
+
+  <h3>Complementos verbais — objeto direto e indireto</h3>
+  <div class="vid-grid">
+    <a class="vid-card" href="https://www.youtube.com/watch?v=lKjL1hSYY_4" target="_blank" rel="noopener">
+      <div class="play"></div>
+      <div class="vid-info">
+        <div class="vt">Objeto Direto e Objeto Indireto — aula completa sobre os complementos verbais</div>
+        <div class="vc">Aula completa de termos integrantes</div>
+      </div>
+      <span class="vid-go">ASSISTIR ▸</span>
+    </a>
+    <a class="vid-card" href="https://www.youtube.com/watch?v=rjjo2qccmxI" target="_blank" rel="noopener">
+      <div class="play"></div>
+      <div class="vid-info">
+        <div class="vt">Transitividade Verbal — exercícios resolvidos</div>
+        <div class="vc">Prof. Noslen</div>
+      </div>
+      <span class="vid-go">ASSISTIR ▸</span>
+    </a>
+    <a class="vid-card" href="https://www.youtube.com/watch?v=LPvs8chprbE" target="_blank" rel="noopener">
+      <div class="play"></div>
+      <div class="vid-info">
+        <div class="vt">Objeto Indireto × Complemento Nominal — confronto de conceitos</div>
+        <div class="vc">Prof. Noslen</div>
+      </div>
+      <span class="vid-go">ASSISTIR ▸</span>
+    </a>
+    <a class="vid-card" href="https://www.youtube.com/watch?v=Cd-1DKdcbas" target="_blank" rel="noopener">
+      <div class="play"></div>
+      <div class="vid-info">
+        <div class="vt">Funções sintáticas dos pronomes o(s), a(s) e lhe(s)</div>
+        <div class="vc">Prof. Noslen</div>
+      </div>
+      <span class="vid-go">ASSISTIR ▸</span>
+    </a>
+  </div>
+
+  <h3>Vozes verbais e agente da passiva</h3>
+  <div class="vid-grid">
+    <a class="vid-card" href="https://www.youtube.com/watch?v=GjbZMa0UmoE" target="_blank" rel="noopener">
+      <div class="play"></div>
+      <div class="vid-info">
+        <div class="vt">Vozes Verbais — ativa, passiva analítica, sintética e reflexiva</div>
+        <div class="vc">Prof. Noslen</div>
+      </div>
+      <span class="vid-go">ASSISTIR ▸</span>
+    </a>
+    <a class="vid-card" href="https://www.youtube.com/watch?v=ulv3l7LdsVU" target="_blank" rel="noopener">
+      <div class="play"></div>
+      <div class="vid-info">
+        <div class="vt">Sujeito × Agente da Passiva — a diferença de uma vez por todas</div>
+        <div class="vc">Prof. Noslen</div>
+      </div>
+      <span class="vid-go">ASSISTIR ▸</span>
+    </a>
+    <a class="vid-card" href="https://www.youtube.com/watch?v=Mg8nF0mCv14" target="_blank" rel="noopener">
+      <div class="play"></div>
+      <div class="vid-info">
+        <div class="vt">Termos da Sintaxe — predicativo, aposto, vocativo e agente da passiva</div>
+        <div class="vc">Prof. Noslen</div>
+      </div>
+      <span class="vid-go">ASSISTIR ▸</span>
+    </a>
+    <a class="vid-card" href="https://www.youtube.com/watch?v=_eXmEYLHM5c" target="_blank" rel="noopener">
+      <div class="play"></div>
+      <div class="vid-info">
+        <div class="vt">Vozes Verbais — voz ativa, voz passiva e voz reflexiva</div>
+        <div class="vc">Profa. Pamba</div>
+      </div>
+      <span class="vid-go">ASSISTIR ▸</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ REVISAO ============ -->
+<section id="revisao">
+  <div class="sec-tag">Fixação</div>
+  <h2>Revisão final dos conceitos</h2>
+  <p class="lead">Leia este bloco em voz alta. Se você consegue explicar cada item com suas palavras, está pronto para a prova.</p>
+
+  <div class="recap">
+    <h3>10 frases para gravar</h3>
+    <ol>
+      <li><b>Transitividade</b> é a necessidade (ou não) que o verbo tem de um complemento — e ela depende do contexto.</li>
+      <li><b>Objeto direto</b> completa o VTD, vem sem preposição obrigatória e responde "o quê? / quem?".</li>
+      <li><b>Objeto indireto</b> completa o VTI, vem com preposição obrigatória e é trocável por "lhe / lhes".</li>
+      <li><b>Objeto direto preposicionado</b> tem preposição opcional — se eu tirá-la, a frase continua correta.</li>
+      <li><b>Objeto pleonástico</b> é a repetição do objeto, por ênfase, retomado por um pronome.</li>
+      <li>Na <b>voz ativa</b>, o sujeito pratica a ação; na <b>voz passiva</b>, o sujeito sofre a ação.</li>
+      <li>A <b>voz passiva</b> é analítica (ser + particípio) ou sintética (verbo + "se" apassivador).</li>
+      <li>O <b>agente da passiva</b> é quem pratica a ação na voz passiva — vem com a preposição "por" ou "de".</li>
+      <li>Na <b>transposição</b>: objeto direto → sujeito paciente; sujeito → agente da passiva; verbo → ser + particípio no mesmo tempo.</li>
+      <li><b>Só verbos com objeto direto</b> (VTD / VTDI) admitem voz passiva.</li>
+    </ol>
+  </div>
+
+  <div class="box b-concept">
+    <div class="box-title"><span class="box-icon">✦</span>Pergunta final de autoavaliação</div>
+    <p style="margin-bottom:0">Olhe para a frase <span class="ex">"O texto foi corrigido pela professora"</span> e responda sem consultar: qual é o sujeito paciente? Qual é a locução verbal passiva? E qual é o agente da passiva? &nbsp;<em>(Sujeito paciente: "O texto" · Locução: "foi corrigido" · Agente da passiva: "pela professora".)</em> Se você acertou, dominou o tema. Bons estudos!</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p class="fbrand">AULA PREMIUM · SINTAXE DO PERÍODO SIMPLES</p>
+  <p>Material de estudo elaborado a partir da Recuperação de Língua Portuguesa — 2ª série do Ensino Médio. Foco em complementos verbais e agente da passiva, com preparação para vestibulares concorridos.</p>
+  <p>Estude em blocos, refaça os exercícios e revise os pontos de atenção antes da prova.</p>
+</footer>
+
+<button id="toTop" aria-label="Voltar ao topo">↑</button>
+
+<script>
+  // progress bar
+  var bar=document.getElementById('progress');
+  var toTop=document.getElementById('toTop');
+  function onScroll(){
+    var h=document.documentElement;
+    var scrolled=(h.scrollTop)/(h.scrollHeight-h.clientHeight);
+    bar.style.width=(scrolled*100)+'%';
+    if(h.scrollTop>500){toTop.classList.add('show')}else{toTop.classList.remove('show')}
+    // active nav
+    var secs=document.querySelectorAll('section');
+    var cur='';
+    secs.forEach(function(s){
+      if(h.scrollTop>=s.offsetTop-120){cur=s.id}
+    });
+    document.querySelectorAll('.nav-links a').forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  // back to top
+  toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+
+  // mobile menu
+  var mb=document.getElementById('menuBtn');
+  var nl=document.getElementById('navLinks');
+  mb.addEventListener('click',function(){nl.classList.toggle('open')});
+  nl.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){nl.classList.remove('open')});
+  });
+</script>
+
+</body>
+</html>
